@@ -2,4 +2,72 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+}
+
+.logo {
+    display: flex;
+   
+    justify-content: center;
+}
+
+
+.logo img {
+    width: 30vw;
+    
+}
+
+.new-todo {
+    text-align: center;
+}
+
+.new-todo input {
+    padding: 10px 20px;
+    border-radius: 1rem;
+    border-width: 1px;
+    min-width: 300px;
+    margin-right: 15px;
+}
+
+.todos-container {
+    margin: 40px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    padding: 30px;
+}
+
+.todos-container ul {
+    list-style: none;
+}
+
+.todo {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+li {
+    font-size: 1.5rem;
+}
+
+
+
+
+.todo i {
+    float: right;
+}
+
+.todo i:hover {
+    color: salmon;
+}
+
+.done {
+    text-decoration: line-through;
 }

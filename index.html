@@ -6,14 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 </head>
 <body>
-    <div id="app">
-
+    <div class="container" id="app">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+        <div class="new-todo">
+            <form action="" @submit.prevent="addTodo()">
+                <input type="text" v-model="newTodo.text" required minlength="6" placeholder="Nuova Task">
+                <button>
+                    Aggiungi
+                </button>
+            </form>
+        </div>
+    
+        <div class="todos-container">
+            <ul v-if="todos.length !== 0">
+                <li v-for="(todo, i) in todos" 
+                    
+                    class="todo" 
+                    @click="todoDone(i)"
+                    :class="(todo.done === true) ? 'done' : ''">
+                    {{ todo.text }}
+                    <i class="fas fa-times" @click="deleteTodo(i)"></i>
+                </li>
+            </ul>
+            <h2 v-else>Lista completata</h2>
+        </div>
     </div>
-
 
 
     <script src="js/script.js"></script>
