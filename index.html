@@ -32,7 +32,7 @@
                     @click="todoDone(i)"
                     :class="(todo.done === true) ? 'done' : ''">
                     {{ todo.text }}
-                    <i  class="fas fa-times" @click="deleteTodo(i)"></i>
+                    <i  class="fas fa-times" @click.stop="deleteTodo(i)"></i>
                 </li>
             </ul>
             <h2 v-else>Lista completata</h2>
