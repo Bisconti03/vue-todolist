@@ -17,10 +17,7 @@ const { createApp } = Vue
                 done: false,
             },
         ],
-        newTodo: {
-            text: '',
-            done: false,
-        },
+        newTodo: '',
       }
     },
 
@@ -32,8 +29,12 @@ const { createApp } = Vue
         addTodo() {
 
             if(this.newTodo != '') {
-
-                this.todos.push(this.newTodo);
+                 const newElement = 
+                 {
+                    text: this.newTodo,
+                    done: false,
+                };
+                this.todos.push(newElement);
                 this.newTodo = '';
             }
         },
